@@ -1,0 +1,5 @@
+{
+  "name": "course",
+  "version": "0.0.0",
+  "main": "dist/front/browser/index.html"
+}

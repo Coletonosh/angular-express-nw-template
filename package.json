@@ -1,0 +1,73 @@
+{
+  "name": "angular-express-nw-template",
+  "version": "0.0.1",
+  "main": "http://localhost:4200",
+  "node-remote": "http://localhost:4200",
+  "type": "module",
+  "window": {
+    "icon": "assets/icon.png"
+  },
+  "chromium-args": "--enable-spell-checking",
+  "scripts": {
+    "postinstall": "base-volta-off-of-nwjs",
+    "test": "npm run test-ng && npm run test-ex",
+    "test-ng": "ng test",
+    "test-ex": "",
+    "start": "concurrently --kill-others \"npm run dev-ng\" \"npm run dev-nw\" \"npm run dev-ex\"",
+    "dev-nw": "wait-on -c wait-on.config.json http://localhost:4200 && nw .",
+    "dev-ng": "ng serve",
+    "dev-ex": "node dist/back/server.js",
+    "bld": "npm run bld-ex && npm run bld-ng && npm run bld-nw",
+    "bld-nw": "nwbuild --cacheDir=./node_modules/nw --outDir=./dist/nw --managedManifest=./package.nw.json ./package.json ./dist/ng/*",
+    "bld-ng": "ng build",
+    "bld-ex": "tsc --p express_back/tsconfig.back.json"
+  },
+  "private": true,
+  "volta": {
+    "node": "21.1.0"
+  },
+  "keywords": [],
+  "author": "coletonosh",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@angular/animations": "^17.2.0",
+    "@angular/common": "^17.2.0",
+    "@angular/compiler": "^17.2.0",
+    "@angular/core": "^17.2.0",
+    "@angular/forms": "^17.2.0",
+    "@angular/platform-browser": "^17.2.0",
+    "@angular/platform-browser-dynamic": "^17.2.0",
+    "@angular/router": "^17.2.0",
+    "@types/express": "^4.17.21",
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.2.2",
+    "@angular/cli": "^17.2.2",
+    "@angular/compiler-cli": "^17.2.0",
+    "@types/chai": "^5.0.1",
+    "@types/jasmine": "~5.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.11.26",
+    "@types/nw.js": "^0.13.21",
+    "@types/supertest": "^6.0.2",
+    "base-volta-off-of-nwjs": "^1.0.3",
+    "concurrently": "^8.2.2",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "nw": "0.85.0",
+    "nw-builder": "^4.6.4",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.3.2",
+    "wait-on": "^7.2.0"
+  }
+}
