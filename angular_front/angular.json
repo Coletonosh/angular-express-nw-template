@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "../node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -10,24 +10,21 @@
           "style": "scss"
         }
       },
-      "root": "angular_front",
-      "sourceRoot": "angular_front/src",
+      "root": "./",
+      "sourceRoot": "./src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "./dist/front",
-            "index": "angular_front/src/index.html",
-            "browser": "angular_front/src/main.ts",
+            "outputPath": "../dist/front",
+            "index": "./src/index.html",
+            "browser": "./src/main.ts",
             "polyfills": ["zone.js"],
-            "tsConfig": "angular_front/tsconfig.app.json",
+            "tsConfig": "./tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "angular_front/src/favicon.ico",
-              "angular_front/src/assets"
-            ],
-            "styles": ["angular_front/src/styles.scss"],
+            "assets": ["./src/favicon.ico", "./src/assets"],
+            "styles": ["./src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -76,14 +73,10 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "angular_front/tsconfig.spec.json",
+            "tsConfig": "./tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "angular_front/src/favicon.ico",
-              "angular_front/src/assets"
-            ],
-            "styles": ["angular_front/src/styles.scss"],
-            "scripts": []
+            "assets": ["./src/favicon.ico", "./src/assets"],
+            "styles": ["./src/styles.scss"]
           }
         }
       }

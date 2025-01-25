@@ -32,9 +32,9 @@
 
 ## Available Commands
 
-### Development
+### All
 
-- Run the app in development mode:
+- **Run the app in development mode**:
 
   ```bash
     npm start
@@ -42,80 +42,89 @@
 
   Runs the frontend (Angular), backend (Express.js), and desktop app (NW.js) simultaneously.
 
-- Frontend development:
+- **Build the app**:
 
   ```bash
-    npm run dev-ng
+    npm build
+  ```
+
+  Builds the Angular, Express, and NW.js apps for production.
+
+---
+
+### Testing
+
+- **Frontend tests**:
+
+  ```bash
+    npm run test:front
+  ```
+
+  Runs the tests configured for the Angular frontend.
+
+- **Backend tests**:
+
+  ```bash
+    test:back
+  ```
+
+  Runs the tests configured for the Express backend.
+
+---
+
+### Building
+
+- **Desktop app building**:
+
+  ```bash
+    npm run build:nw
+  ```
+
+  Builds the NW.js desktop application.
+
+- **Frontend building**:
+
+  ```bash
+    npm run build:front
+  ```
+
+  Builds the Angular frontend for production.
+
+- **Backend building**:
+
+  ```bash
+    npm run build:back
+  ```
+
+  Builds the Express backend using TypeScript.
+
+---
+
+### Starting
+
+- **Desktop app development**:
+
+  ```bash
+    npm run start:nw
+  ```
+
+  Launches the NW.js desktop application once the frontend is ready.
+
+- **Frontend development**:
+
+  ```bash
+    npm run start:front
   ```
 
   Starts the Angular development server.
 
-- Backend development:
+- **Backend development**:
 
   ```bash
-    npm run dev-ex
+    npm run start:back
   ```
 
-  Runs the Express server.
-
-- Desktop app development:
-  ```bash
-    npm run dev-nw
-  ```
-  Launches NW.js once the frontend is ready.
-
-### Testing
-
-- Run all tests:
-
-  ```bash
-    npm test
-  ```
-
-  Executes both frontend and backend tests.
-
-- Frontend tests:
-
-  ```bash
-    npm run test-ng
-  ```
-
-  Runs the tests configured in Angular.
-
-- Backend tests:
-  (To be implemented)
-
-### Build
-
-- Frontend tests:
-
-  ```bash
-    npm run test-ng
-  ```
-
-  Runs the tests configured in Angular.
-
-- Frontend tests:
-
-  ```bash
-    npm run test-ng
-  ```
-
-  Runs the tests configured in Angular.
-
-- Frontend tests:
-
-  ```bash
-    npm run test-ng
-  ```
-
-  Runs the tests configured in Angular.
-
-- Frontend tests:
-  ```bash
-    npm run test-ng
-  ```
-  Runs the tests configured in Angular.
+  Runs the Express backend server.
 
 ## Project Structure
 
@@ -140,8 +149,10 @@
   │   │   ├── main.ts                   # Entry point for the Angular application
   │   │   └── styles.scss               # Global styles for the Angular application
   │   │
+  │   ├── angular.json                  # Angular workspace configuration
+  │   ├── package.json                  # Project dependencies and scripts for the front
   │   ├── tsconfig.app.json             # TypeScript configuration for the Angular application
-  │   ├── tsconfig.json                 # Base TypeScript configuration
+  │   ├── tsconfig.json                 # Base TypeScript configuration for front
   │   └── tsconfig.spec.json            # TypeScript configuration for Angular tests
   │
   ├── assets/                           # Icons for the launcher
@@ -152,12 +163,15 @@
   │
   ├── express_back/                     # Backend code (Express)
   │   ├── tsconfig.back.ts              # TypeScript configuration for the backend
-  │   └── src/                          # Folder for code
-  │       └── server.ts                 # Main server file
+  │   ├── jest.config.js                # Config test back
+  │   ├── package.json                  # Project dependencies and scripts for the back
+  │   ├── server.spec.ts                # Main server file test
+  │   ├── server.ts                     # Main server file
+  │   ├── tsconfig.back.json            # Base TypeScript configuration for back
+  │   └── tsconfig.spec.json            # TypeScript configuration for back tests
   │
   ├── .editorconfig                     # Editor configuration for consistent coding styles
   ├── .gitignore                        # Specifies files and directories to be ignored by Git
-  ├── angular.json                      # Angular workspace configuration
   ├── package.json                      # Project dependencies and scripts
   ├── package.nw.json                   # NW.js configuration
   ├── README.md                         # Documentation for the project

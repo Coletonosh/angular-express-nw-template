@@ -1,5 +1,5 @@
 {
-  "name": "course",
+  "name": "angular-express-nw-template",
   "version": "0.0.0",
-  "main": "dist/front/browser/index.html"
+  "main": "./dist/front/browser/index.html"
 }

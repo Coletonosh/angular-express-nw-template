@@ -1,0 +1,22 @@
+{
+  "name": "express_back",
+  "version": "0.0.1",
+  "scripts": {
+    "ex:start": "ts-node server.ts",
+    "ex:test": "jest",
+    "ex:build": "tsc --p ./tsconfig.back.json"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.3"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "@types/jest": "^29.0.0",
+    "supertest": "6.3.1",
+    "@types/supertest": "^6.0.2",
+    "@types/express": "^4.17.21",
+    "ts-node": "^10.9.2"
+  }
+}

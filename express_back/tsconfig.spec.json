@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "../dist/test",
+    "baseUrl": "./src",
+    "types": ["jest", "node"]
+  },
+  "include": [
+    "express_back/**/*.ts",
+    "express_back/**/*.test.ts",
+    "express_back/**/*.spec.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
